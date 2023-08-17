@@ -1,0 +1,235 @@
+// -----------------------------------------------------
+// file to define function key usage
+//
+// available function keys are
+//
+// f1 through f12 although f1 and f10 should
+// be avoided since they are reserved by Microsoft 
+//
+// available function key modifiers are
+//
+// shift control alt
+//
+// available functions are
+//
+//    toggle_point_snap
+//    toggle_line_snap
+//    toggle_grid_snap
+//    toggle_cursor_snap
+//    toggle_tin_snap
+//    toggle_input_height_snap
+//
+// the following geometry snaps may change in name
+//
+//    create_edit
+//    line_create_edit
+//    tangent_items_edit
+//    fillet_3_points_edit
+//    fillet_item_item_cp_edit
+//    fillet_item_item_radius_cp_edit
+//    locate_divide_edit
+//    locate_divide_distance_edit
+//    parallel_edit
+//    intersect_edit
+//    intersect_offset_edit
+//    bearings_intersect_edit
+//    between_points_edit
+//    locate_edit
+//    locate_chainage_edit
+//    locate_offset_edit
+//    locate_deflection_edit
+//    locate_drop_perpendicular_edit
+//    locate_projection_edit
+//    locate_two_point_distances_edit
+//
+// measure commands
+//
+//    measure_point_x_edit
+//    measure_point_y_edit
+//    measure_point_z_edit
+//    measure_point_chainage_edit
+//    measure_point_angle_edit
+//    measure_point_bearing_edit
+//    measure_point_xfall_edit
+//    measure_point_slope_edit
+//    measure_point_radius_edit
+//
+//    measure_points_length_edit
+//    measure_points_length_3d_edit
+//    measure_points_x_edit
+//    measure_points_y_edit
+//    measure_points_z_edit
+//    measure_points_chainage_edit
+//    measure_points_angle_edit
+//    measure_points_bearing_edit
+//    measure_points_xfall_edit
+//    measure_points_slope_edit
+//
+//    measure_string_point_length_edit
+//    measure_string_point_length_3d_edit
+//    measure_string_point_x_edit
+//    measure_string_point_y_edit
+//    measure_string_point_z_edit
+//    measure_string_point_chainage_edit
+//    measure_string_point_angle_edit
+//    measure_string_point_bearing_edit
+//    measure_string_point_xfall_edit
+//    measure_string_point_slope_edit
+//
+// some sample lines may be
+//
+// f3               toggle_point_snap
+// shift f3         toggle_line_snap
+// control shift f7 toggle_input_height_snap
+// shift control f7 toggle_input_height_snap
+//
+// note that all function key modifiers must come before
+// the function key itself.
+//
+// -----------------------------------------------------
+
+control r  redraw
+control R  redraw
+
+f2         panel "String Inquire"
+shift f2     snap cogo intersect_edit
+// shift f2   layout "Std_apply_many.slf"
+control f2 panel "Apply Kerb Return Function"
+
+f3         panel toggle_point_snap
+shift f3     snap cogo perpen_edit
+control f3 	   panel "Section Corridor"
+//control alt f3     panel "Profile Model on Section"
+//control shift f3   panel "Section Profile Extend"
+
+//f4         panel "Measure Value"
+f4         toggle_line_snap
+shift f4     snap cogo create_between_edit
+
+// shift f4   panel "XFall Between 2 Strings Inquire"
+control f4 panel "Global"
+
+//f5         toggle_point_snap
+f5         toggle_cursor_snap
+// shift f5   panel "Exact Volumes"
+control f5 panel "End Area Volumes"
+
+f6           panel "Edit String"
+//shift f6   panel "Cuts"
+//control f6 panel "X-Sections Along a String"
+
+
+f7         panel "Triangulate a data source"
+//shift f7   panel "Edit String"
+//control f7 panel "String Labelling"
+
+
+f8         panel "String attributes"
+//f8         toggle_input_height_snap
+// shift f8   panel "String Create"
+control f8 panel "Cogo"
+
+
+//f9         panel "Multi String Properties"
+f9       panel "Change string"
+shift f9   panel "New Section View"
+control f9 panel "New Perspective View"
+
+f11        panel "Plan View Tin Settings Menu"
+f11        panel "Perspective View Tin Settings Menu"
+shift f11  panel "Tin Utilities"
+control f11  panel "Functions"
+
+f12        panel "ADAC"
+
+
+// these will not work under NT
+
+alt f9     panel  "String Inquire"
+shift alt f9     panel  "String Inquire"
+
+control alt a  panel "Edit Vertex"
+control alt A  panel "Edit Vertex"
+-------------------------------------------------------------------------
+//Tin Options
+//f12         panel "Tin Create"
+shift f12   panel "Tin Edit"
+control f12 panel "Tin Null"
+-------------------------------------------------------------------------
+//Snaps Toggles
+f3         panel toggle_point_snap
+f4         toggle_line_snap
+f5         toggle_cursor_snap
+-------------------------------------------------------------------------
+//Cad Create
+control alt p panel "Cad Point"
+control alt l panel "Cad Line"
+-------------------------------------------------------------------------
+//Cad Edit
+control Alt h panel "Point Height"
+control Alt H panel "Point Height"
+-------------------------------------------------------------------------
+//Measure Options
+control b  panel "Measure Bearing/Distance" 
+control B  panel "Measure Bearing/Distance" 
+control e  measure "MEASURE_STRING_TO_POINT_LENGTH_EDIT"
+control E  measure "MEASURE_STRING_TO_POINT_LENGTH_EDIT"
+-------------------------------------------------------------------------
+//Cad Delete
+//shift control D panel "Delete Point"
+//control alt d panel "Delete String"    
+control alt D panel "Delete String"
+-------------------------------------------------------------------------
+//Snaps Cogo Options
+shift f5     snap cogo divide_by_#_edit
+shift f6     snap cogo intersect_offset_edit
+shift f7     snap cogo locate_Bearing dist_edit
+shift f8     snap cogo locate_offset_edit
+
+------------------------------------------------------------------------
+// 12d Field Functions
+// These hotkeys can also be accessed via CTRL keys etc via 12df_user_keys.4d
+//       12d_field "store"
+//	 12d_field "measure"
+control shift f2  panel "12d Field - Pickup"
+control shift f3  panel "12d Field - Last Configuration"
+control shift f7  panel "12d Field - Instrument Setup"
+//control shift f12
+control shift Alt f2 panel "Pickup editor"
+control shift Alt f3 panel "Pickup favourites"
+-------------------------------------------------------------------------
+//View Options
+control alt + panel "Tagged Models to Add"
+control alt = panel "Tagged Models to Add"
+control alt - panel "Tagged Models to Remove"
+
+control +  panel "Add Models to View by Pick"
+control =  panel "Add Models to View by Pick"
+control -  panel "Remove Models from View by Pick"
+
+control *  panel "Remove Models from View"//Use "*" for wildcard
+control alt *  panel "Add Models to View"//Use "*" for wildcard
+//control 8  panel "Add Models to View"//Use "*" for wildcard
+
+control t panel "Tin Models to Add"
+control T panel "Tin Models to Add"
+control alt t panel "Tin Models to Remove" 
+control alt T panel "Tin Models to Remove"
+
+
+-------------------------------------------------------------------------
+//Survey Data Reduction OPTIONS
+control shift f8  panel "Edit Survey Field Data"
+control shift f9  panel "Survey Data Reduction Function"
+control shift f11 panel "Edit MTF Survey Function Data"
+
+control 0 panel "SDR Delete Point"
+control 1 panel "Insert Target Height"
+control 2 panel "Change Target Height" 
+control 3 panel "SDR Additional Text"	
+control 4 panel "SDR Change Code/String"
+control 5 panel "SDR Quick Change Code/String"
+control 6 panel "SDR Multiple Coding"
+control 7 panel "SDR End String"
+control 8 panel "SDR Reverse String"
+control 9 panel "SDR Close String"

@@ -18,7 +18,12 @@ void main(){
 				text = To_text(no_verts);
 				text = "There are " + text + " vertices in the string. Select another string";
 				for (i; i<=no_verts; i++){
-					Super_vertex_attribute_dump(super, i);
+					// For each vertex 'i' dump it's attributes
+					//Super_vertex_attribute_dump(super, i);
+					if(Get_super_vertex_attributes(super,i,att) == 0){
+						// value of zero means there are attributes
+						Print("\nHello\n");
+					};
 				};
 				
 				Prompt(text);

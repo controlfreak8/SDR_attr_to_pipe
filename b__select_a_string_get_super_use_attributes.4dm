@@ -4,7 +4,7 @@
 void main(){
 	
 	Element super;
-	Integer ret=0, i=1, no_verts, att_no=6;
+	Integer ret=0, i=1, no_verts, att_no=6, use;
 	Text text, name;
 	Attributes att;
 	
@@ -17,9 +17,12 @@ void main(){
 			if(Get_points(super,no_verts) !=0) continue;
 				text = To_text(no_verts);
 				text = "There are " + text + " vertices in the string. Select another string";
-				for (i; i<=no_verts; i++){
-					Super_vertex_attribute_dump(super, i);
+				if(Get_super_use_vertex_attribute(super,use) == 0){
+					Print("\nHello\n");
+					Print();
+					Print(use);
 				};
+				
 				
 				Prompt(text);
 			}

@@ -18,6 +18,7 @@ void main(){
 				text = To_text(no_verts);
 				text = "There are " + text + " vertices in the string. Select another string";
 				for (i; i<=no_verts; i++){
+					// For each vertex 'i' dump it's attributes
 					Super_vertex_attribute_dump(super, i);
 				};
 				
